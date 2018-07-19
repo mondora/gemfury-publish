@@ -4,7 +4,12 @@ import {readFileSync} from "fs";
 export default function gemfuryPublish ({gemfuryUser, gemfuryApiKey}) {
     try {
         const pkg = JSON.parse(readFileSync("package.json"));
-        const file = `${pkg.name}-${pkg.version}.tgz`;
+        let name = pkg.name;
+        if (name.startsWith("@")) {
+            name = name.substring(1, name.length);
+            name = name.replace("/", "-");
+        }
+        const file = `${name}-${pkg.version}.tgz`;
         console.log("Packing npm module");
         execSync("npm pack");
         console.log("Uploading to gemfury");
