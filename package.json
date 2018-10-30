@@ -1,6 +1,6 @@
 {
   "name": "gemfury-publish",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Publish private npm packages on gemfury",
   "main": "lib/bin/gemfury-publish.js",
   "scripts": {
