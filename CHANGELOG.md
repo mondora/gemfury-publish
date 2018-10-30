@@ -1,3 +1,9 @@
+## 1.0.2 (October 30, 2018)
+
+Fixes:
+
+- fix `os` import
+
 ## 1.0.1 (October 30, 2018)
 
 Fixes:
