@@ -16,11 +16,11 @@ export default function gemfuryPublish ({gemfuryUser, gemfuryApiKey}) {
         console.log("Uploading to gemfury");
         execSync(`curl -f -F package=@${file} https://${gemfuryApiKey}@push.fury.io/${gemfuryUser}/`);
         console.log("Cleaning workspace");
-		if (os.platform() == 'win32') {
-			execSync(`del ${file}`);
-		} else {
-			execSync(`rm ${file}`);
-		}
+        if (platform() === "win32") {
+            execSync(`del ${file}`);
+        } else {
+            execSync(`rm ${file}`);
+        }
         console.log(`${pkg.name}@${pkg.version} published on gemfury`);
     } catch (err) {
         console.log("Error publishing to gemfury");
